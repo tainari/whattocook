@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'whattocook.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'whattocook',
+        'USER': 'root',
+        'PASSWORD': '38X@0h*O4Tt5',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
