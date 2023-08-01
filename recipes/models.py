@@ -60,7 +60,7 @@ class Recipe(models.Model):
         (TIME_FAST, "Fast"),
         (TIME_REGULAR, "Regular"),
         (TIME_LONG, "Long"),
-        (TIME_OVERNIGHT, "Overnight")
+        (TIME_OVERNIGHT, "Overnightttt")
     ]
     name = models.CharField(max_length=255)
     slug = models.SlugField(null=True)
@@ -70,17 +70,22 @@ class Recipe(models.Model):
     fillingness_category = models.ForeignKey(
         Fillingness, on_delete=models.CASCADE)
     cook_time = models.CharField(max_length=1,
-        choices=TIME_CHOICES)
+                                 choices=TIME_CHOICES)
+    step_1 = models.CharField(max_length=500,default="")
+    step_2 = models.CharField(max_length=500,null=True,blank=True)
+    step_3 = models.CharField(max_length=500, null=True, blank=True)
+    step_4 = models.CharField(max_length=500, null=True, blank=True)
+    step_5 = models.CharField(max_length=500, null=True, blank=True)
 
-class RecipeSteps(models.Model):
-    recipe = models.ForeignKey(Recipe,on_delete=models.CASCADE)
-    step_number = models.IntegerField(\
-        validators=[MinValueValidator(1), MaxValueValidator(5)],\
-        default=1)
-    step_text = models.CharField(max_length=1000, blank=True)
-    ordering = ['step_number']
-    def __str__(self):
-        return f'{self.recipe}: step {self.stepnumber}'
+# class RecipeSteps(models.Model):
+#     recipe = models.ForeignKey(Recipe,on_delete=models.CASCADE)
+#     step_number = models.IntegerField(\
+#         validators=[MinValueValidator(1), MaxValueValidator(5)],\
+#         default=1)
+#     step_text = models.CharField(max_length=1000, blank=True)
+#     ordering = ['step_number']
+#     def __str__(self):
+#         return f'{self.recipe}: step {self.stepnumber}'
 
 
 class RecipeIngredient(models.Model):
@@ -88,6 +93,7 @@ class RecipeIngredient(models.Model):
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     num_units = models.FloatField()
     unit = models.ForeignKey(Unit, on_delete=models.CASCADE)
+    # r = models.FloatField(default=0, null=True)
     def __str__(self):
         return f'{self.recipe}: {self.ingredient}'#self.recipe + ": " + self.ingredient
 

@@ -1,19 +1,19 @@
 from django.contrib import admin
 from . import models
-from .models import Recipe, Ingredient, Unit, IngredientCategory, RecipeIngredient, Texture, Flavour, CookMethod, Fillingness, RecipeSteps
+from .models import Recipe, Ingredient, Unit, IngredientCategory, RecipeIngredient, Texture, Flavour, CookMethod, Fillingness#, RecipeSteps
 # Register your models here.
 
-class RecipeStepAdmin(admin.ModelAdmin):
-    list_display = ("recipe","stepnumber")
-class RecipeStepInLine(admin.TabularInline):
-    model = models.RecipeSteps
-    #autocomplete_fields = ["name"]
-    max_num = 5
-    extra = 1
+# class RecipeStepAdmin(admin.ModelAdmin):
+#     list_display = ("recipe","stepnumber")
+# class RecipeStepInLine(admin.TabularInline):
+#     model = models.RecipeSteps
+#     #autocomplete_fields = ["name"]
+#     max_num = 5
+#     extra = 1
 class RecipeAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
     search_fields = ['name']
-    inlines = [RecipeStepInLine]
+    # inlines = [RecipeStepInLine]
     prepopulated_fields = {
         'slug': ['name']
     }

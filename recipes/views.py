@@ -5,5 +5,5 @@ from .models import Recipe
 # Create your views here.
 def index(request):
     recipes = Recipe.objects.all()
-    output = ", ".join([r.title for r in recipes])
+    output = ", ".join([r.name for r in recipes])
     return HttpResponse(output)
