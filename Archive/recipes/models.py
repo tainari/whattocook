@@ -76,6 +76,10 @@ class Recipe(models.Model):
     step_3 = models.CharField(max_length=500, null=True, blank=True)
     step_4 = models.CharField(max_length=500, null=True, blank=True)
     step_5 = models.CharField(max_length=500, null=True, blank=True)
+    def __str__(self) -> str:
+        return self.name
+    class Meta:
+        ordering = ['name']
 
 # class RecipeSteps(models.Model):
 #     recipe = models.ForeignKey(Recipe,on_delete=models.CASCADE)
