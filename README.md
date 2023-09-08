@@ -53,4 +53,4 @@ TBD.
 
 ## Proposed Database Design
 
-![](./product_documentation/what_should_i_eat.png)
+![](https://github.com/tainari/whattocook/blob/main/project_documentation/what_should_i_eat.png)
