@@ -53,4 +53,4 @@ TBD.
 
 ## Proposed Database Design
 
-<iframe width="560" height="315" src='https://dbdiagram.io/embed/648cc3a002bd1c4a5e9eff15'> </iframe>
+![](./product_documentation/what_should_i_eat.png)
