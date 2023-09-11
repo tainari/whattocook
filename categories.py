@@ -1,29 +1,29 @@
 TEXTURES = [
-    "watery",
-    "firm",
-    "crunchy",
-    "creamy",
-    "chewy"
+    "Watery",
+    "Firm",
+    "Crunchy",
+    "Creamy",
+    "Chewy"
 ]
 
 TIMES = [
-    "snap",
-    "fast",
-    "average",
-    "long",
-    "overnight"
+    "Snap",
+    "Fast",
+    "Average",
+    "Long",
+    "Overnight"
 ]
 
 FLAVOURS = [
-    "salty",
-    "sweet",
-    "sour",
-    "bitter",
-    "umami",
-    "rich",
-    "spicy",
-    "bittersweet",
-    "sweet & sour"
+    "Salty",
+    "Sweet",
+    "Sour",
+    "Bitter",
+    "Umami",
+    "Rich",
+    "Spicy",
+    "Bittersweet",
+    "Sweet & Sour"
 ]
 
 #source of methods: https://www.webstaurantstore.com/article/454/types-of-cooking-methods.html
@@ -47,8 +47,8 @@ METHODS = [
 ]
 
 FILLINGNESS = [
-    "snack",
-    "light meal",
-    "big meal",
-    "food coma"
+    "Snack",
+    "Light meal",
+    "Big meal",
+    "Food coma"
 ]

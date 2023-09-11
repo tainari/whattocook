@@ -86,16 +86,19 @@ right_column_title.grid(row=1, column=1)
 add_recipe_button = tkinter.Button(text="+",highlightbackground="white")
 add_recipe_button.grid(row=1,column=2)
 
-recipe_frame = tkinter.Frame(background='black',width=100,pady=10)
-recipe_frame.grid(row=2,column=1,columnspan=2,rowspan=18,sticky='nsew')
+recipe_frame = tkinter.Frame(background='white',width=100,pady=10,highlightbackground="white")
+recipe_frame.grid(row=2,column=1,columnspan=2,rowspan=18,sticky='nsew', padx=10)
 recipe_canvas = tkinter.Canvas(recipe_frame, bg='white',width=100)
-recipe_canvas.pack()
-# recipe_scrollbar = tkinter.Scrollbar(screen,width=10)
+recipe_canvas.grid(row=0, column=0)
+recipe_scrollbar = tkinter.Scrollbar(recipe_canvas, command=recipe_canvas.yview)
+recipe_scrollbar.grid(row=0, column=2, sticky='ns')#tkinter.NS)
+recipe_canvas.configure(yscrollcommand=recipe_scrollbar.set)
+recipes = tkinter.Listbox(recipe_canvas, yscrollcommand=recipe_scrollbar.set,width=70,justify="left",height=30,background='white',foreground='black')
+for line in range(100):
+   recipes.insert(tkinter.END, "This is recipe " + str(line))
+recipes.grid(row=0,column=1,sticky='ns')
+
 # # scrollbar.pack( side = "right", fill = "y" )
-# recipes = tkinter.Listbox(screen, yscrollcommand=recipe_scrollbar.set,width=50,justify="left")
-# for line in range(100):
-#    recipes.insert(tkinter.END, "This is line number " + str(line))
-# recipes.grid(row=2,column=1,columnspan=2)
 
 screen.mainloop()
 
